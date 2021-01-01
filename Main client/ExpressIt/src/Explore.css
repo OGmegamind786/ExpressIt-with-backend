@@ -1,0 +1,51 @@
+#explore {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow:hidden;
+  
+}
+
+#search {
+  width: 100%;
+}
+
+#search-bar {
+  background-color: #161515;
+  width: 95%;
+  height: 5vh;
+  margin: 10px;
+}
+
+.logo-search {
+  height: 5vh;
+  width: 150px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eb0804;
+  text-align: center;
+  z-index: inherit;
+}
+
+.swipe{
+  position: absolute;
+}
+
+.blog-card{
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  background-size: cover;
+}
+
+.tinderCard-container{
+  width: 500px;
+
+}
+
+
+
+
+

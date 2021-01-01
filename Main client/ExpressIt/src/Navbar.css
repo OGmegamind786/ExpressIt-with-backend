@@ -1,0 +1,27 @@
+.navbar-custom {
+  border-bottom: #161515 5px solid;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.link {
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: inherit;
+}
+
+.link:hover {
+  border-bottom: #eb0804 2px solid;
+  color: #eb0804;
+}
+
+.logo {
+  height: 50px;
+  width: 150px;
+  background-color: #eb0804;
+  text-align: center;
+  z-index: inherit;
+  /* margin-left: 5%; */
+}

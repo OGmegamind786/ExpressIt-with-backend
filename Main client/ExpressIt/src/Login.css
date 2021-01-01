@@ -1,0 +1,90 @@
+#login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1070px) {
+  #login {
+    flex-direction: column;
+  }
+}
+
+#login-info {
+  height: 450px;
+  width: 450px;
+  background-color: #eb0000;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logoR {
+  height: 50px;
+  width: 150px;
+  /* margin: 10px;
+    padding: 10px; */
+  background-color: #eb0804;
+  text-align: center;
+  z-index: inherit;
+  margin-left: 5%;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 400px;
+  background-color: #161515;
+  margin: 20px;
+  padding: 50px;
+  flex-direction: column;
+}
+
+/* form{
+    height: fit-content;
+    width: 400px;
+    margin: 30px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: #EB0000 2px solid;
+} */
+
+input {
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  padding: 10px;
+}
+
+input[type="submit"] {
+  width: 100px;
+  background-color: #eb0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="password"] {
+  border: none;
+  border-bottom: 2px solid red;
+  background-color: #161515;
+  color: white;
+}
+
+input[type="email"] {
+  border: none;
+  border-bottom: 2px solid red;
+  background-color: #161515;
+  color: white;
+}

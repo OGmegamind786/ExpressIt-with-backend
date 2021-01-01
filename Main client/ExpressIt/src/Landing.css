@@ -1,0 +1,49 @@
+#landing {
+  border-bottom: #161515 5px solid;
+  /* background-attachment: fixed;
+    background-image: url(./images/landing-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
+  height: 100vh;
+  opacity: 0.5;
+  z-index: inherit;
+  z-index: -1;
+  margin: 20px;
+  padding: 20px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 25%;
+  margin-bottom: 25%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 750px) {
+  #landing {
+    background-size: contain;
+  }
+}
+
+#landing-content {
+  color: black;
+  font-weight: bold;
+  opacity: 1;
+  padding-top: 25%;
+  margin-bottom: 25%;
+}
+
+#heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tagline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
