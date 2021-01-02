@@ -78,19 +78,19 @@ function Navbar() {
         className="logo mr-auto p-2 bd-highlight"
         onClick={handleExpressItClick}
       >
-        <Link to="/">ExpressIt</Link>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">ExpressIt</Link>
       </div>
       <div
         className="link p-2 bd-highlight align-self-center"
         style={{ display: displayOnFeed }}
       >
-        <Link to="/users/me/feed">Feed</Link>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/users/me/feed">Feed</Link>
       </div>
       <div
         className="link p-2 bd-highlight align-self-center"
         style={{ display: displayOnProfile }}
       >
-        <Link to="/users/me/profile">Profile</Link>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/users/me/profile">Profile</Link>
       </div>
 
       <RenderAuthButton

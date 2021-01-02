@@ -102,7 +102,7 @@ function Register() {
             Expresso Write-Ups!
           </div>
         </div>
-        <div id="form">
+        <div id="form-register">
           <h1>
             <div className="logo">ExpressIt</div>
           </h1>

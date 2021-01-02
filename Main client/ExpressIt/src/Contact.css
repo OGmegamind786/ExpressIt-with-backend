@@ -1,58 +1,61 @@
 .contact {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   border-bottom: #161515 5px solid;
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding: 50px;
+  /* flex-direction: column-reverse; */
 }
+
 
 #contact-info {
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: flex-start; */
+  align-items: flex-start; 
+  
 }
 
-/* @media screen and (max-width: 1070px) {
+@media screen and (max-width: 768px) {
   #contact-info {
     flex-direction: column-reverse;
   }
-} */
+
+  .contact{
+    flex-direction: column-reverse;
+  }
+} 
 
 strong {
   color: #eb0000;
 }
 
 .info {
-  height: 400px;
-  width: 400px;
+  height: 550px;
+  width: 550px;
   background-color: #eb0000;
   display: flex;
   justify-content: center;
-  /* margin: 20px;
-  padding: 50px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 50px; */
+  /* margin: 20px; */
+  padding: 20px; 
 }
 
 .form {
-  height: 400px;
-  width: 400px;
+  height: 550px;
+  width: 550px;
   background-color: #161515;
   text-align: center;
-  /* margin: 20px;
+  margin: 20px;
   padding: 50px;
-  flex-direction: column; */
+  flex-direction: column; 
 }
 
 input {
   margin-bottom: 30px;
   font-family: "Poppins", sans-serif;
-  /* width: 100%;
-  padding: 10px; */
+  width: 100%;
+  padding: 10px; 
 }
 
 input[type="submit"] {

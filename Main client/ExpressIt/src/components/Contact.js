@@ -73,9 +73,6 @@ function Contact() {
 
   return (
     <div className="contact container">
-      <h1 id="heading">Contact Us</h1>
-
-      <div className="row">
         <div className="form col-md-6">
           <form onSubmit={handleSubmit}>
             <div>Name:</div>
@@ -123,7 +120,6 @@ function Contact() {
         <div className="info col-md-6">
           <h1 id="heading">Reach Out to Us</h1>
         </div>
-      </div>
     </div>
   );
 }

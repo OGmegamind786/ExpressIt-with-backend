@@ -20,7 +20,7 @@ const RenderAuthButton = (props) => {
         onClick={onClickLogin}
         style={{ display: displayNone }}
       >
-        <Link to="/users/login">Login</Link>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to="/users/login">Login</Link>
       </div>
     );
   }

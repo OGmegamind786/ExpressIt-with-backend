@@ -5,8 +5,6 @@ function About() {
     return (
         <div className="about container">
             
-            <div className="row">
-            
             <div className="about-info col-md-6">
                 
                 <h1 id="heading">What is ExpressIt?</h1>
@@ -24,7 +22,6 @@ function About() {
                 <p>Learn about your favourite topics like Fashion, Food, Travel and much more easily with our swiping feature on<strong id="expressit"> Expresso Write-Ups!</strong></p>
             
             </div>
-        </div>
             </div>
             
     )

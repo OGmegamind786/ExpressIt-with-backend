@@ -68,7 +68,7 @@ function Login() {
         <h1 id="heading">Welcome Back to ExpressIt!</h1>
         <div>Expresso Write-Ups are waiting for you!</div>
       </div>
-      <div id="form">
+      <div id="form-login">
         <h1>
           <div className="logo">ExpressIt</div>
         </h1>
@@ -108,7 +108,7 @@ function Login() {
           <div>
             Not Registered ? Click Below To Register
             <div className="link p-2 bd-highlight align-self-center">
-              <Link to="/users/register">Register Now</Link>
+              <Link style={{ textDecoration: 'none', color: '#EB0000' }} to="/users/register">Register Now</Link>
             </div>
           </div>
         </form>
