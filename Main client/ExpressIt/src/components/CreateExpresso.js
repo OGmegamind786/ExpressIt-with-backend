@@ -1,4 +1,4 @@
-import React, { createRef, useRef, useState } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import backendUrl from "../config";
@@ -42,11 +42,6 @@ function CreateExpresso() {
   };
 
   const handleCreateExpresso = async () => {
-    const dataToSend = {
-      title: title,
-      category: category,
-      mainBlog: mainBlog,
-    };
     const isValid = validate();
     if (isValid) {
       setErrors({});

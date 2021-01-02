@@ -6,12 +6,15 @@ import backendUrl from "../config";
 
 function CreateProfile() {
   const history = useHistory();
-  const [data, setData] = useState({});
+  // const [data, setData] = useState({});
 
   const [name, setName] = useState("");
   const [age, setAge] = useState();
   const [about, setAbout] = useState("");
   const [image, setImage] = useState("");
+  const [imageFromDb, setImageFromDb] = useState("");
+  const [imagePreviewUrl, setImagePreviewUrl] = useState("");
+  const [imageFlag, setImageFlag] = useState(false);
 
   const [errors, setErrors] = useState({});
 
@@ -20,10 +23,12 @@ function CreateProfile() {
       const res = await Axios.get(`${backendUrl}/users/me/profile`, {
         headers: { Authorization: localStorage.getItem("SavedToken") },
       });
-      setData(res.data);
       setName(res.data.name);
       setAge(res.data.age);
       setAbout(res.data.userDescription);
+      setImageFromDb(res.data.image);
+
+      console.log(res.data.image);
     };
     fetchData();
   }, []);
@@ -32,7 +37,7 @@ function CreateProfile() {
     let nameError = "";
     let ageError = "";
     let aboutError = "";
-
+    // let imageError = "";
     if (name === "") {
       nameError = " name cannot be empty";
     }
@@ -42,7 +47,9 @@ function CreateProfile() {
     } else if (isNaN(age)) {
       ageError = "age should be a number";
     }
-
+    // if (image === "") {
+    //   imageError = "Please Choose some Image";
+    // }
     if (about === "") {
       aboutError = " Field cannot be empty";
     }
@@ -53,6 +60,7 @@ function CreateProfile() {
         name: nameError,
         age: ageError,
         about: aboutError,
+        // image: imageError,
       });
       return false;
     }
@@ -60,11 +68,6 @@ function CreateProfile() {
   };
 
   const handleCreateProfile = async () => {
-    const dataToSend = {
-      name: name,
-      age: age,
-      userDescription: about,
-    };
     const isValid = validate();
     if (isValid) {
       setErrors({});
@@ -73,7 +76,11 @@ function CreateProfile() {
         form.append("name", name);
         form.append("age", age);
         form.append("userDescription", about);
-        form.append("image", image);
+
+        if (image) {
+          form.append("image", image);
+        }
+
         const res = await Axios.post(
           "http://localhost:3012/users/me/createProfile",
           form,
@@ -125,9 +132,40 @@ function CreateProfile() {
             name="image"
             accept="image/*"
             onChange={(e) => {
-              setImage(e.target.files[0]);
+              let reader = new FileReader();
+              reader.onloadend = () => {
+                setImage(e.target.files[0]);
+                setImagePreviewUrl(reader.result);
+              };
+              reader.readAsDataURL(e.target.files[0]);
+              setImageFlag(true);
             }}
           />
+          <div className="text-danger">{errors.image}</div>
+          <br />
+          {imageFlag ? (
+            <img
+              alt=""
+              src={
+                imagePreviewUrl
+                // ||
+                // `${backendUrl}/` +
+                //   imagePreviewUrl.replace("http://localhost:3000/users/me/", "")
+              }
+              style={{ height: 100, width: 100 }}
+            />
+          ) : (
+            <img
+              alt=""
+              src={
+                // imagePreviewUrl
+                // // ||
+                `${backendUrl}/` +
+                imageFromDb.replace("http://localhost:3000/users/me/", "")
+              }
+              style={{ height: 100, width: 100 }}
+            />
+          )}
         </div>
 
         <br />

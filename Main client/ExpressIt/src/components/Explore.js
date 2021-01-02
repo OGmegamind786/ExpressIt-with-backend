@@ -8,7 +8,6 @@ import "../Explore.css";
 import RenderPost from "./RenderPost";
 import TinderCard from "react-tinder-card";
 import Popup from "reactjs-popup";
-import PullToRefresh from "react-simple-pull-to-refresh";
 
 function Explore() {
   const [data, setData] = useState([]);
@@ -67,50 +66,74 @@ function Explore() {
   return (
     <>
       <div id="explore">
-        <h1>
-          Explore <strong>Expresso</strong> Write-Ups
-        </h1>
+        <div>
+          <h1 style={{ textAlign: "center" }}>
+            Explore <strong>Expresso</strong> Write-Ups
+          </h1>
+        </div>
         <br />
-        <h4>Start Swiping</h4>
+        <h5>
+          <i class="fas fa-arrow-circle-left"></i>
+          &nbsp; Swipe Left to explore!
+        </h5>
+        <h5>
+          Swipe Right to add to Favorites &nbsp;
+          <i class="fas fa-arrow-circle-right"></i>
+        </h5>
 
         <div
+          className="category"
           style={{
             display: "flex",
             flexDirection: "row",
+            width: "100%",
+            justifyContent: "center",
           }}
         >
-          Category of your Expresso:
-          <select
-            name="category"
-            value={category}
-            onChange={(e) => {
-              setCategory(e.target.value);
-            }}
-            // onClick={handleFilterToggle}
-          >
-            <option value="">None</option>
-            <option value="Lifestyle">Lifestyle</option>
-            <option value="Fashion">Fashion</option>
-            <option value="Food">Food</option>
-            <option value="Travel">Travel</option>
-            <option value="Music">Music</option>
-            <option value="Art">Art</option>
-            <option value="Fitness">Fitness</option>
-            <option value="DIY">DIY</option>
-            <option value="Sports">Sports</option>
-            <option value="Finance">Finance</option>
-            <option value="Business">Business</option>
-            <option value="Personal">Personal</option>
-            <option value="Movies/TV Show">Movies/TV Show</option>
-            <option value="News">News</option>
-            <option value="Fan Theory">Fan Theory</option>
-          </select>
-          <button
-            style={{ height: 50, width: 80, fontSize: "16px" }}
-            onClick={handleFilterToggle}
-          >
-            Filter List
-          </button>
+          <div>Category of your Expresso:</div>
+          <div>
+            <select
+              name="category"
+              value={category}
+              onChange={(e) => {
+                setCategory(e.target.value);
+              }}
+            >
+              <option value="">None</option>
+              <option value="Lifestyle">Lifestyle</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Food">Food</option>
+              <option value="Travel">Travel</option>
+              <option value="Music">Music</option>
+              <option value="Art">Art</option>
+              <option value="Fitness">Fitness</option>
+              <option value="DIY">DIY</option>
+              <option value="Sports">Sports</option>
+              <option value="Finance">Finance</option>
+              <option value="Business">Business</option>
+              <option value="Personal">Personal</option>
+              <option value="Movies/TV Show">Movies/TV Show</option>
+              <option value="News">News</option>
+              <option value="Fan Theory">Fan Theory</option>
+            </select>
+          </div>
+          <div>
+            <button
+              className="btn-filter"
+              style={{
+                height: 50,
+                width: 80,
+                fontSize: "16px",
+                backgroundColor: "#eb0804",
+                border: 0,
+                marginLeft: 10,
+                color: "white",
+              }}
+              onClick={handleFilterToggle}
+            >
+              Filter List
+            </button>
+          </div>
         </div>
 
         {isFilterOn ? (
@@ -126,21 +149,24 @@ function Explore() {
                     className="blog-card"
                     onDoubleClick={() => buttonRefs.current[index].open()}
                   >
-                    <img
-                      src={
-                        `${backendUrl}/` +
-                        item.image.replace(
-                          "http://localhost:3000/users/me/",
-                          ""
-                        )
-                      }
-                      alt="dummy"
-                      style={{
-                        height: 500,
-                        width: 500,
-                        objectFit: "contain",
-                      }}
-                    />
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <img
+                        className="expresso-card-image"
+                        src={
+                          `${backendUrl}/` +
+                          item.image.replace(
+                            "http://localhost:3000/users/me/",
+                            ""
+                          )
+                        }
+                        alt="dummy"
+                        style={{
+                          height: 500,
+                          width: 500,
+                          objectFit: "contain",
+                        }}
+                      />
+                    </div>
                     <div
                       style={{
                         display: "flex",
@@ -203,21 +229,24 @@ function Explore() {
                     className="blog-card"
                     onDoubleClick={() => buttonRefs.current[index].open()}
                   >
-                    <img
-                      src={
-                        `${backendUrl}/` +
-                        item.image.replace(
-                          "http://localhost:3000/users/me/",
-                          ""
-                        )
-                      }
-                      alt="dummy"
-                      style={{
-                        height: 500,
-                        width: 500,
-                        objectFit: "contain",
-                      }}
-                    />
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <img
+                        className="expresso-card-image"
+                        src={
+                          `${backendUrl}/` +
+                          item.image.replace(
+                            "http://localhost:3000/users/me/",
+                            ""
+                          )
+                        }
+                        alt="dummy"
+                        style={{
+                          height: 500,
+                          width: 500,
+                          objectFit: "contain",
+                        }}
+                      />
+                    </div>
                     <div
                       style={{
                         display: "flex",
@@ -269,6 +298,7 @@ function Explore() {
           </div>
         )}
       </div>
+      <br />
     </>
   );
 }

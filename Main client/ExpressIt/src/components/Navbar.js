@@ -1,18 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../Navbar.css";
-import Login from "../components/Login";
-import Register from "../components/Register";
-import Home from "../components/Home";
 import backendUrl from "../config";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useHistory,
-  useLocation,
-} from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import Axios from "axios";
 import RenderAuthButton from "./RenderAuthButton";
 
@@ -77,20 +67,42 @@ function Navbar() {
       <div
         className="logo mr-auto p-2 bd-highlight"
         onClick={handleExpressItClick}
+        style={{
+          marginTop: 15,
+          marginLeft: 10,
+        }}
       >
-        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">ExpressIt</Link>
+        <Link
+          style={{
+            textDecoration: "none",
+            color: "white",
+          }}
+          to="/"
+        >
+          ExpressIt
+        </Link>
       </div>
       <div
         className="link p-2 bd-highlight align-self-center"
         style={{ display: displayOnFeed }}
       >
-        <Link style={{ textDecoration: 'none', color: 'white' }} to="/users/me/feed">Feed</Link>
+        <Link
+          style={{ textDecoration: "none", color: "white" }}
+          to="/users/me/feed"
+        >
+          Feed
+        </Link>
       </div>
       <div
         className="link p-2 bd-highlight align-self-center"
         style={{ display: displayOnProfile }}
       >
-        <Link style={{ textDecoration: 'none', color: 'white' }} to="/users/me/profile">Profile</Link>
+        <Link
+          style={{ textDecoration: "none", color: "white" }}
+          to="/users/me/profile"
+        >
+          Profile
+        </Link>
       </div>
 
       <RenderAuthButton

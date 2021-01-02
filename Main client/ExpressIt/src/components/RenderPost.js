@@ -11,7 +11,11 @@ function RenderPost(props) {
         alignItems: "center",
       }}
     >
-      <img alt="" src={imageSrc} />
+      <img
+        alt=""
+        src={imageSrc}
+        style={{ height: "50%", width: "50%", objectFit: "contain" }}
+      />
       <br />
       <p>Post</p>
       <div className="header">{title}</div>

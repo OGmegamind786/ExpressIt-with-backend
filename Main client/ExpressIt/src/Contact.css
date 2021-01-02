@@ -1,5 +1,5 @@
 .contact {
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   border-bottom: #161515 5px solid;
   display: flex;
@@ -10,20 +10,25 @@
 }
 
 
-#contact-info {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; 
-  
-}
+
 
 @media screen and (max-width: 768px) {
-  #contact-info {
-    flex-direction: column-reverse;
-  }
-
   .contact{
     flex-direction: column-reverse;
+  }
+  .info{
+    height: 100vh!important;
+    width: 100vw!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form{
+    height: 100vh!important;
+    width: 100vw!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 } 
 
@@ -32,8 +37,8 @@ strong {
 }
 
 .info {
-  height: 550px;
-  width: 550px;
+  height: 70vh;
+  width: 50vw;
   background-color: #eb0000;
   display: flex;
   justify-content: center;
@@ -42,8 +47,8 @@ strong {
 }
 
 .form {
-  height: 550px;
-  width: 550px;
+  height: 70vh;
+  width: 50vw;
   background-color: #161515;
   text-align: center;
   margin: 20px;

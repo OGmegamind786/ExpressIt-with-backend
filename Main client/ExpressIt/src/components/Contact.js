@@ -73,53 +73,53 @@ function Contact() {
 
   return (
     <div className="contact container">
-        <div className="form col-md-6">
-          <form onSubmit={handleSubmit}>
-            <div>Name:</div>
-            <input
-              type="text"
-              name="name"
-              onChange={(e) => {
-                setName(e.target.value);
-              }}
-              value={name}
-            />
-            <div className="text-danger">{errors.name}</div>
+      <div className="form col-md-6">
+        <form onSubmit={handleSubmit}>
+          <div>Name:</div>
+          <input
+            type="text"
+            name="name"
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+            value={name}
+          />
+          <div className="text-danger">{errors.name}</div>
 
-            <br />
+          <br />
 
-            <div>Email:</div>
-            <input
-              type="email"
-              name="mail"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              value={email}
-            />
-            <div className="text-danger">{errors.email}</div>
+          <div>Email:</div>
+          <input
+            type="email"
+            name="mail"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            value={email}
+          />
+          <div className="text-danger">{errors.email}</div>
 
-            <br />
+          <br />
 
-            <div>Enter your message:</div>
-            <textarea
-              name="message"
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              value={message}
-            />
-            <div className="text-danger">{errors.message}</div>
+          <div>Enter your message:</div>
+          <textarea
+            name="message"
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+            value={message}
+          />
+          <div className="text-danger">{errors.message}</div>
 
-            <br />
+          <br />
 
-            <input type="submit" value="Submit" className="submit-btn" />
-          </form>
-        </div>
+          <input type="submit" value="Submit" className="submit-btn" />
+        </form>
+      </div>
 
-        <div className="info col-md-6">
-          <h1 id="heading">Reach Out to Us</h1>
-        </div>
+      <div className="info col-md-6">
+        <h1 id="heading">Reach Out to Us</h1>
+      </div>
     </div>
   );
 }

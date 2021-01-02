@@ -35,14 +35,34 @@
 }
 
 .blog-card{
+  
   position: relative;
   background-color: rgb(0, 0, 0);
   background-size: cover;
 }
 
 .tinderCard-container{
-  width: 500px;
+  width: 500;
+  display: flex;
+  justify-content: center;
+}
 
+.btn-filter:focus{
+  outline: white solid 2px;
+}
+
+@media only screen and (max-width: 600px) {
+  .category{
+    flex-wrap: wrap;
+  }
+  .tinderCard-container{
+    width: 100vw;
+  }
+  .expresso-card-image{
+    height: 30%!important;
+    width: 50%!important;
+  }
+  
 }
 
 

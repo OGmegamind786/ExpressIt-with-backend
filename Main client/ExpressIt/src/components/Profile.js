@@ -56,55 +56,43 @@ function Profile() {
   return (
     <div>
       <div className="container-fluid">
-        <div className="profile row justify-content-around">
-          <div className="user-bar col-md-3">
-            <h1 id="welcome">Welcome {data.name}</h1>
+        <div className="profile row  user-bar justify-content-around ">
+          <div className=" col-md-3">
+            {/* <h1 id="welcome">Welcome {data.name}</h1> */}
             <br />
 
-            <div>
-              <img
-                alt=""
-                src={
-                  `${backendUrl}/` +
-                  imageUrl.replace("http://localhost:3000/users/me/", "")
-                }
-                style={{ height: 100, width: 100, objectFit: "contain" }}
-              />
-            </div>
-
             <div className="create">
-              <Link to="/users/me/createExpresso">
+              <Link to="/users/me/createExpresso" id="create-expresso">
                 + Create a New Expresso Write-Up
               </Link>
             </div>
             <br />
 
             <div className="create">
-              {/* <h2 id="data">{totalFavExpressos}</h2> */}
-              <Link to="/users/me/favoriteExpresso">Favourites</Link>
-            </div>
-
-            <div className="create ">
-              <h2 id="data">{totalExpressos}</h2>
-              Total Expresso Write-Ups
-            </div>
-
-            <div className="create">
-              <h2 id="data">.</h2>
-              Chat Cafe
-            </div>
-            <div>
-              <Link to="/users/me/createProfile">
-                <h4 id="data">Update Profile</h4>
+              <Link to="/users/me/favoriteExpresso" id="favorite">
+                Favourites
               </Link>
             </div>
+            <br />
+            <div className="create " id="total-expressos">
+              <h5 id="data">{totalExpressos}</h5>
+              Total Expresso Write-Ups
+            </div>
+            <br />
+
+            <div className="create ">
+              <Link to="/users/me/createProfile" id="update-profile">
+                Click here to Update Profile
+              </Link>
+            </div>
+            <br />
           </div>
 
           <div className="user-content col-md-6">
             <div id="user-bio">
               <div id="user-info">
-                <h1>User {data.name}</h1>
-                <h3>Age :{data.age}</h3>
+                <h1> {data.name}</h1>
+                <h3>I'm {data.age} years old</h3>
                 <div id="about-user">
                   About
                   <div>{data.userDescription}</div>
@@ -112,10 +100,28 @@ function Profile() {
               </div>
             </div>
           </div>
-          <div className="user-pic col-md-2"></div>
+          <div className="user-pic col-md-3">
+            <img
+              alt=""
+              src={
+                `${backendUrl}/` +
+                imageUrl.replace("http://localhost:3000/users/me/", "")
+              }
+              style={{
+                height: 200,
+                width: 200,
+                objectFit: "cover",
+                backgroundColor: "black",
+                borderRadius: "50%",
+              }}
+            />
+          </div>
         </div>
+
         {!totalExpressos ? (
-          <div>No user expressos</div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div>No user expressos</div>
+          </div>
         ) : (
           <div id="user-posts">
             {expressos.map((item, index) => (
@@ -135,7 +141,11 @@ function Profile() {
                           ""
                         )
                       }
-                      style={{ height: 200, width: 200, objectFit: "contain" }}
+                      style={{
+                        height: 200,
+                        width: "100%",
+                        objectFit: "contain",
+                      }}
                     />
                     {/* delete button favicon below */}
                     <i
