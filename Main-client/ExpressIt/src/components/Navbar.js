@@ -55,6 +55,8 @@ function Navbar() {
         }
       );
       localStorage.clear("SavedToken");
+      localStorage.clear("User-Name");
+
       setIsLoggedIn(false);
       history.push("/users/login");
     } catch (error) {

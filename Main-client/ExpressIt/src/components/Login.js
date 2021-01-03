@@ -46,7 +46,10 @@ function Login() {
       try {
         const res = await Axios.post(`${backendUrl}/users/login`, dataToSend);
         let token = res.data.token;
+        let userName = res.data.user.name;
         localStorage.setItem("SavedToken", "Bearer " + token);
+        localStorage.setItem("User-Name", userName);
+
         console.log(res);
         history.push("/users/me/profile");
       } catch (error) {
@@ -108,7 +111,12 @@ function Login() {
           <div>
             Not Registered ? Click Below To Register
             <div className="link p-2 bd-highlight align-self-center">
-              <Link style={{ textDecoration: 'none', color: '#EB0000' }} to="/users/register">Register Now</Link>
+              <Link
+                style={{ textDecoration: "none", color: "#EB0000" }}
+                to="/users/register"
+              >
+                Register Now
+              </Link>
             </div>
           </div>
         </form>

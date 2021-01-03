@@ -160,7 +160,7 @@ router.post(
       console.log(req.body, req.file);
       const expresso = new Expresso({
         ...req.body,
-        image: req.file.path.replace,
+        image: req.file.path,
         image_mime_type: req.file.mimetype,
       });
       await expresso.save();

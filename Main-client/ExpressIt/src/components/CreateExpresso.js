@@ -51,11 +51,11 @@ function CreateExpresso() {
         form.append("title", title);
         form.append("category", category);
         form.append("mainBlog", mainBlog);
-        // const newData = form.getAll();
 
         const res = await Axios.post(
           `${backendUrl}/users/me/createExpresso`,
           form,
+
           {
             headers: { Authorization: localStorage.getItem("SavedToken") },
           }

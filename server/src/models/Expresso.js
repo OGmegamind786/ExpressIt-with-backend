@@ -10,6 +10,9 @@ const ExpressoSchema = mongoose.Schema({
   mainBlog: {
     type: String,
   },
+  createdBy: {
+    type: String,
+  },
   image: {
     type: String,
   },
