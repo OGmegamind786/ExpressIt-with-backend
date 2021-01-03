@@ -103,10 +103,16 @@ router.post(
           },
         },
       });
+      let imagePath;
+      if (req.file) {
+        imagePath = req.file.path;
+        await user.updateOne({
+          image: imagePath,
+        });
+      }
 
       await user.updateOne({
         ...req.body,
-        image: req.file.path,
       });
       const u = await User.findOne({
         tokens: {
