@@ -16,20 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(userRouter);
 app.use(commonRouter);
 
-app.use(express.static("../../Main-client/ExpressIt/build"));
+app.use(express.static("ExpressIt/build"));
 
 app.get("*", (req, res) => {
-  res.sendFile(
-    path.resolve(
-      __dirname,
-      "../",
-      "../",
-      "Main-client",
-      "ExpressIt",
-      "build",
-      "index.html"
-    )
-  );
+  res.sendFile(path.resolve(__dirname, "ExpressIt", "build", "index.html"));
 });
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
