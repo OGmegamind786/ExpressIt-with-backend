@@ -82,7 +82,7 @@ function CreateProfile() {
         }
 
         const res = await Axios.post(
-          "http://localhost:3012/users/me/createProfile",
+          `${backendUrl}/users/me/createProfile`,
           form,
           {
             headers: { Authorization: localStorage.getItem("SavedToken") },
