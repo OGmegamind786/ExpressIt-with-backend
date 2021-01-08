@@ -8,9 +8,24 @@
   padding: 50px;
 }
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 768px) {
   #login {
     flex-direction: column;
+  }
+  #login-info {
+    height: 40vh !important;
+    width: 100vw !important;
+    /* margin-bottom: 100px !important; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-login {
+    height: 100vh !important;
+    width: 100vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

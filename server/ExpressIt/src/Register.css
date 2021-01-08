@@ -10,11 +10,25 @@
 
 h1 {
   padding-top: 30px;
-} 
+}
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 768px) {
   #register {
     flex-direction: column;
+  }
+  #register-info {
+    height: 40vh !important;
+    width: 100vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #form-register {
+    height: 100vh !important;
+    width: 100vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
